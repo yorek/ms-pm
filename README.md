@@ -2,7 +2,7 @@
 
 Annotated and enhanced transcript of the video:
 
-https://www.youtube.com/IgfEyE2VxzA
+https://www.youtube.com/watch?v=IgfEyE2VxzA
 
 Content by Matthew Roche. Website by Davide Mauri with the permission of Matthew Roche.
 
