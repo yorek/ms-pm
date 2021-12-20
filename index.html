@@ -8,13 +8,19 @@
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css">
   <title>Being a Program Manager at Microsoft</title>
   <style>
+    /*
     p::first-letter {
       float: left;
-      font-size: 75px;
+      font-size: 65px;
       line-height: 40px;
-      padding-top: 4px;
-      padding-right: 8px;
+      padding-top: 10px;
+      padding-right: 4px;
       color: #cf74f3;
+    }
+    */
+
+    .note {
+      margin-top: -20px;
     }
   </style>
 </head>
@@ -28,6 +34,20 @@
     </div>
 
     <div class="row">
+      <div class="col-lg-12">
+        <div class="note">
+          <div class="alert alert-info" role="alert">
+            <strong>What is this website?</strong>
+            I (Davide) have been asked thousand times what means to be a PM in Microsoft and
+            exactly what a PM do. My friend Matthew Roche recorded what is in my opinion the best and most complete
+            answer possible, and so I though it could be helpful to make that answer even more accessible and
+            discoverable by anyone interested. Following you'll find the annotaded and enhanced transcript of Mattew's recording.             
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="row">
       <div class="col-lg-4 pt-2">
         <div class="card sticky-top">
           <div class="card-body">
@@ -35,6 +55,7 @@
               <iframe
                 src="https://www.youtube.com/embed/IgfEyE2VxzA?origin=https://plyr.io&amp;iv_load_policy=3&amp;modestbranding=1&amp;playsinline=1&amp;showinfo=0&amp;rel=0&amp;enablejsapi=1"></iframe>
             </div>
+            <p class="card-text"></p>
           </div>
         </div>
       </div>
@@ -46,8 +67,19 @@
       </div>
     </div>
 
+    <div class="row">
+      <div class="col-lg-12">
+        <div class="">
+          <p class="text-center">
+            Content by Matthew Roche. Website by Davide Mauri with the permission of Matthew Roche.
+          </p>
+        </div>
+      </div>
+    </div>
+    
     <script src="https://cdn.plyr.io/3.6.9/plyr.polyfilled.js" crossorigin="anonymous"></script>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"
+      crossorigin="anonymous"></script>
     <script src="https://kit.fontawesome.com/df23aa53fc.js" crossorigin="anonymous"></script>
     <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js" crossorigin="anonymous"></script>
     <script>
@@ -55,7 +87,12 @@
 
       fetch("text.md")
         .then(response => response.text())
-        .then(text => document.getElementById('content').innerHTML = marked.parse(text))      
+        .then(text => document.getElementById('content').innerHTML = marked.parse(text));
+        
+      function moveTo(t) {
+        player.currentTime = t;
+        player.play();
+      };
     </script>
 </body>
 
