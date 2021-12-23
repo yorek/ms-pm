@@ -27,6 +27,14 @@
       background-color: yellow;
     }
 
+    .card-body {
+      padding: unset;
+    }
+
+    .card {
+      background-color: unset;
+      border: unset;
+    }
   </style>
 </head>
 
@@ -43,11 +51,15 @@
         <div class="note">
           <div class="alert alert-info" role="alert">
             <strong>What is this website?</strong>
-            I (<a href="https://twitter.com/mauridb" target="_blank">Davide</a>) have been asked thousand times what means to be a PM in Microsoft and
-            exactly what a PM does. My friend <a href="https://twitter.com/SQLAllFather" target="_blank">Matthew Roche</a> recorded what is in my opinion <em>the best and most complete
-            answer possible</em>, and so I though it could be helpful to make that answer even more accessible and
-            discoverable by anyone interested. Below here you'll find the annotaded and enhanced transcript of Matthew's recording. 
-            If you also want to contribute and improve the transcript or the look-and-feel, head to the <a href="https://github.com/yorek/ms-pm" target="_blank">GitHub Repo</a>.    
+            I (<a href="https://twitter.com/mauridb" target="_blank">Davide</a>) have been asked thousand times what
+            means to be a PM in Microsoft and
+            exactly what a PM does. My friend <a href="https://twitter.com/SQLAllFather" target="_blank">Matthew
+              Roche</a> recorded what is in my opinion <em>the best and most complete
+              answer possible</em>, and so I though it could be helpful to make that answer even more accessible and
+            discoverable by anyone interested. Below here you'll find the annotaded and enhanced transcript of Matthew's
+            recording.
+            If you also want to contribute and improve the transcript or the look-and-feel, head to the <a
+              href="https://github.com/yorek/ms-pm" target="_blank">GitHub Repo</a>.
           </div>
         </div>
       </div>
@@ -60,9 +72,7 @@
             <div class="plyr__video-embed" id="player">
               <iframe
                 src="https://www.youtube.com/embed/IgfEyE2VxzA?origin=https://azurewebsites.net&amp;iv_load_policy=3&amp;modestbranding=1&amp;playsinline=1&amp;showinfo=0&amp;rel=0&amp;enablejsapi=1"
-                allow="autoplay"
-                autoplay
-                ></iframe>
+                allow="autoplay" autoplay></iframe>
             </div>
             <p class="card-text"></p>
           </div>
@@ -85,19 +95,22 @@
         </div>
       </div>
     </div>
-    
+
     <script src="https://cdn.plyr.io/3.6.12/plyr.polyfilled.js" crossorigin="anonymous"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"
       crossorigin="anonymous"></script>
     <script src="https://kit.fontawesome.com/df23aa53fc.js" crossorigin="anonymous"></script>
     <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/darkmode-js@1.5.7/lib/darkmode-js.min.js"></script>
     <script>
       const player = new Plyr('#player');
 
-      fetch("text.md")
-        .then(response => response.text())
-        .then(text => document.getElementById('content').innerHTML = marked.parse(text));
-        
+      const options = {
+        left: '64px',
+        time: '0.5s',
+        label: '🌓'
+      }
+
       function moveTo(st) {
         tp = st.split(":");
         t = parseInt(tp[0]) * 60 + parseInt(tp[1]);
@@ -105,6 +118,14 @@
         player.muted = false;
         player.play();
       };
+
+      window.addEventListener('load', function () {
+        new Darkmode(options).showWidget();
+      });
+
+      fetch("text.md")
+          .then(response => response.text())
+          .then(text => document.getElementById('content').innerHTML = marked.parse(text));
     </script>
 </body>
 
