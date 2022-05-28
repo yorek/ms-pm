@@ -36,7 +36,7 @@
     .darkmode--activated img {
       -webkit-filter: invert(1);
       filter: invert(1);
-    }    
+    }
   </style>
 </head>
 
@@ -100,7 +100,8 @@
 
     <script data-goatcounter="https://being-a-ms-pm.goatcounter.com/count" async src="//gc.zgo.at/count.js"></script>
     <script src="https://cdn.plyr.io/3.6.12/plyr.polyfilled.js" crossorigin="anonymous"></script>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"
+      crossorigin="anonymous"></script>
     <script src="https://kit.fontawesome.com/df23aa53fc.js" crossorigin="anonymous"></script>
     <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js" crossorigin="anonymous"></script>
     <script src="https://cdn.jsdelivr.net/npm/darkmode-js@1.5.7/lib/darkmode-js.min.js"></script>
@@ -125,9 +126,12 @@
         new Darkmode(options).showWidget();
       });
 
-      fetch("text.md")
+      document.addEventListener('DOMContentLoaded', (event) => {
+        fetch("text.md")
           .then(response => response.text())
           .then(text => document.getElementById('content').innerHTML = marked.parse(text));
+      })
+
     </script>
 </body>
 
