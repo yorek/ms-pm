@@ -105,14 +105,8 @@
     <script src="https://kit.fontawesome.com/df23aa53fc.js" crossorigin="anonymous"></script>
     <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js" crossorigin="anonymous"></script>
     <script src="https://cdn.jsdelivr.net/npm/darkmode-js@1.5.7/lib/darkmode-js.min.js"></script>
-    <script>
+    <script>     
       const player = new Plyr('#player');
-
-      const options = {
-        left: '64px',
-        time: '0s',
-        label: '🌓'
-      }
 
       function skipTo(st) {
         tp = st.split(":");
@@ -123,7 +117,11 @@
       };
 
       window.addEventListener('load', function () {
-        new Darkmode(options).showWidget();
+        new Darkmode({
+          left: '64px',
+          time: '0s',
+          label: '🌓'
+        }).showWidget();
       });
 
       document.addEventListener('DOMContentLoaded', (event) => {
